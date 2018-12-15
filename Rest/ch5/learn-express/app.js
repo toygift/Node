@@ -28,8 +28,8 @@ app.use(logger('dev'));
 app.use(cookieParser('secret code'));
 
 app.use(session({
-  resave: false,
-  saveUninitialized: false,
+  resave: false,//요청이 왔을때 세션에 수정사항이 생기지 않더라도 세션을 다시 저장할지에 대한 설정
+  saveUninitialized: false,//세션에 저장할 내역이 없더라도 세션을 저장할지에 대한 설정(보통 방문자를 추적할때 사용)
   secret: 'secret code',
   cookie: {
     httpOnly: true,
